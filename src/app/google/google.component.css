@@ -1,0 +1,147 @@
+z/
+
+.resize{
+    max-width: 500px;
+    min-width: 150px;
+}
+*{
+    color: #6c5a23;
+  }
+  .logo{
+      width: 50%;
+      padding-left: 10%;
+  }
+  .logo img{
+      width: 100%;
+  }
+  .textLogo{
+    
+    width: 100%;
+  }
+  .textLogo img{
+    width: 100%;
+  }
+  .section{
+      width: 80%;
+      text-align: center;
+      margin: auto;
+  }
+  .precautiontext{
+      display: flex;
+      justify-content: space-between;
+  }
+  .precautiontext .present{
+    font-size: 5vw;
+    font-weight: 600;
+  }
+  .precautiontext .precaution{
+    display: inline-block;
+    padding-top: 2%;
+    font-size: 3vw;
+  }
+  .felximg{
+      width: 100%;
+      padding: 0;
+      margin: auto;
+  }
+  .felximg li{
+      margin-top: 4%;
+      width: 48%;
+      display: inline-block;
+  }
+  .felximg li:nth-child(even){
+      margin-left: 4%; 
+  }
+  .felximg li:nth-child(1),.felximg li:nth-child(2){
+      margin-top: 0;
+  }
+  .felximg img{
+    vertical-align: top;
+    width: 100%;
+    border: 1px solid #6c5a23;
+  }
+  .midText{
+      padding: 3%;
+      box-sizing: border-box;
+      border-top: 1px solid #6c5a23;
+      border-bottom: 1px solid #6c5a23;
+      width: 100%;
+      font-size: 4vw;
+  }
+  .inputbody{
+      position: relative;
+  }
+  .inputbody .mascot{
+    position: absolute;
+    right: 10%;
+    z-index: 10;
+    width: 15%
+  }
+  .inputbody .mascot img{
+      width: 100%;
+  }   
+  .form {
+    width: 80%;
+    margin: 10% auto;
+    margin-bottom: 0;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  .mat-button{
+      text-align: center;
+      display: block;
+      margin: auto;
+      width: 80%;
+      padding:0;
+      background-color: url("../../assets/btn_go.png");
+  }
+  .mat-button .disalbeButton{
+    width: 100%;
+    filter: grayscale(90%);
+  }
+  .mat-button .albeButton{
+    width: 100%;
+  }
+  .text{
+   
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+  .text label{
+    display: block;
+  }
+  .text .agree{
+    overflow-y: scroll;
+    resize: none;
+    width: 100%;
+    border:1px solid #6c5a23;
+    box-sizing: border-box;
+    height: 50px;;
+  }
+  .feedback{
+    color: red;
+    margin-top: -3%;
+    font-size: 9px;
+  }
+  .checkflex{
+      margin-top: 3%;
+      text-align: right;
+  }
+  .checkbox{
+    overflow: visible;
+  }
+  .checkboxtext{
+      font-size: 2vw;
+      margin-left: 3%;
+  }
+  .spinner1{
+    margin: 20% auto;
+  }
+ 
+  li{
+    list-style: none;
+  }

@@ -1,0 +1,96 @@
+<div class="body resize">
+<div class="top resize">
+  <h1 class="logo">
+    <img src="../../assets/logo.png" alt="로고">
+  </h1>
+  <div class="textLogo">
+    <img src="../../assets/mascot1.png" alt="">
+  </div>
+</div>
+<div class="section resize">
+  <div class="precautiontext">
+    <span class="present">증정 사은품</span>
+    <span class="precaution">&#42;사은품 구성은 변경될 수 있습니다.</span>
+  </div>
+  <ul class="felximg">
+    <li><img src="../../assets/pic1.png" alt=""></li>
+    <li><img src="../../assets/pic2.png" alt=""></li>
+    <li><img src="../../assets/pic3.png" alt=""></li>
+    <li><img src="../../assets/pic4.png" alt=""></li>
+  </ul>
+  <p class="midText ">
+    위 상품은 <strong> 직접 찾아뵙는 상담서비스</strong>이며 <br>
+    <strong>상담 완료 시</strong> 사은품이 증정됩니다
+  </p>  
+</div>
+
+<div *ngIf="!spinner && show" class="inputbody resize">
+  <div class="mascot">
+      <img src="../../assets/mascot2.png" alt="마스코트">
+  </div>
+<form class="form resize" [formGroup]="userData" >
+  <!-- 이름 입력 -->
+  <mat-form-field class="full-width">
+    <input type="text" matInput placeholder="신청자명" formControlName="name" required>
+  </mat-form-field>
+  <div *ngIf="submitted && f.name.errors" class="feedback">
+      <div *ngIf="f.name.errors.required">이름을 입력해주세요</div>
+  </div>
+  <!-- 핸드폰 번호 -->
+  <mat-form-field class="full-width">
+    <input type="tel" matInput placeholder="전화번호" formControlName="phone" [(value)]="phone" (click)="disappear()" required>
+  </mat-form-field>
+  <div *ngIf="submitted && f.phone.errors" class="feedback">
+      <div *ngIf="f.phone.errors.required">번호를 입력해주세요</div>
+      <div *ngIf="f.phone.errors.pattern">숫자를 입력해주세요</div>
+      <div *ngIf="f.phone.errors.min || f.phone.errors.minLength">정확히 입력해주세요</div>
+  </div>
+
+  <!-- 생년월일 -->
+  <mat-form-field class="full-width">
+    <input matInput (click)="picker.open()" formControlName="birthday" [matDatepicker]="picker" placeholder="생년월일" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div *ngIf="submitted && f.birthday.errors" class="feedback">
+      <div *ngIf="f.birthday.errors.required">생일을 입력해주세요</div>
+  </div>
+
+</form>
+<div class="text">
+  <label>이용약관</label>
+  <textarea class="agree resize">
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+    asdasdasdasdasdsadasdasdasdasdasdasdadsasdfkjsdfhkjhjkhfjk
+  </textarea>
+  <div class="checkflex">
+      <mat-checkbox class="checkbox resize" [(ngModel)]="checked" ></mat-checkbox>
+      <span class="checkboxtext">약관 내용을 충분히 이해하고 개인정보 수집 및 이용에 동의합니다.</span>
+    
+  </div>
+  
+  
+<!-- 버튼 부분 -->
+</div>
+  <button type="submit" [disabled]="!checked" class="resize mat-button" (click)="sub()">
+    
+    <img class="disalbeButton" *ngIf="!checked" src="../../assets/btn_go.png" alt="제출하기">
+    <img class="albeButton" *ngIf="checked" src="../../assets/btn_go.png" alt="제출하기">
+</button>
+</div>  
+
+<!-- 스피너 부분 -->
+<div *ngIf="spinner" >
+  <mat-spinner class="spinner1"></mat-spinner>
+</div>
+  <router-outlet></router-outlet>
+</div>
